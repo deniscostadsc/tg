@@ -6,4 +6,4 @@ threadsafe: yes
 
 handlers:
 - url: .*
-  script: edc.app
+  script: edc.main.app
