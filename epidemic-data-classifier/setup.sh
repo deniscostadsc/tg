@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $(dirname $0) && cd edc
+cd $(dirname $0)
 
 if [[ -z $VIRTUAL_ENV ]]; then
     echo "You should start your virtualenv to setup the project!"

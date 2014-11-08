@@ -1,2 +1,3 @@
+*.sqlite3
 
-epidemic-data-classifier/edc/lib
+epidemic-data-classifier/lib
