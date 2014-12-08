@@ -1,3 +1,4 @@
 *.sqlite3
 
 epidemic-data-classifier/lib
+epidemic-data-classifier/edc/secrets.py
