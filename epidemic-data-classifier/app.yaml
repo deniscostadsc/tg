@@ -7,3 +7,16 @@ threadsafe: yes
 handlers:
 - url: .*
   script: edc.main.app
+
+- url: /task/.*
+  script: edc.main.app
+  secure: always
+  login: admin
+
+- url: /favicon.ico
+  static_files: edc/static/ico/favicon.ico
+  upload: edc/static/ico/favicon.ico
+
+libraries:
+- name: ssl
+  version: "2.7"

@@ -1,0 +1,4 @@
+cron:
+  - description: get tweets
+    url: /task/get-tweets
+    schedule: every 1 hours
