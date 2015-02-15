@@ -1,5 +1,7 @@
 *.sqlite3
 *.db
 
+.cache
+.coverage
 epidemic-data-classifier/lib
 secrets.py
