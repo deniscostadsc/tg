@@ -1,13 +1,15 @@
 # coding: utf-8
 import unicodedata
+import re
 
 from nltk import NaiveBayesClassifier
 
 
 def clean(document):
-    # remove non ascii characters
+    nonalphanum = re.compile(r'(\W|_)+')
     document = unicodedata.normalize('NFD', document)
-    return document.encode('ASCII', 'ignore')
+    cleaned_document = document.encode('ASCII', 'ignore').lower()
+    return nonalphanum.sub(' ', cleaned_document)
 
 
 def ngrams(document, n=3):
