@@ -13,9 +13,7 @@ def clean(document):
 
 
 def ngrams(document, n=3):
-    if not isinstance(document, list):
-        document = document.split()
-    document = [clean(word) for word in document]
+    document = clean(document).split()
     return [tuple(document[i:i + n])
         for i in range(len(document) - n + 1)]
 
@@ -27,15 +25,7 @@ def all_trigrams(documents):
     return all_trigrams
 
 
-documents = (
-    (u'a menina está com dengue', 'reliable'),
-    (u'pessoa com dengue é dengosa?', 'unreliable'),
-    (u'Essa semana acordei mal. Será que estou com dengue?', 'reliable'),
-    (u'Fui no médico. Deu dengue!', 'reliable')
-)
-
-
-def document_feature(document):
+def document_feature(document, documents):
     document_trigrams = ngrams(document)
     feature = {}
     for trigram in all_trigrams(documents):
@@ -43,11 +33,9 @@ def document_feature(document):
     return feature
 
 
-def generate_training_set(documents):
+def generate_dataset(documents):
     return [(document_feature(d), c) for d, c in documents]
 
-classifier = NaiveBayesClassifier.train(generate_training_set(documents))
+# classifier = NaiveBayesClassifier.train(generate_dataset(documents))
 
-print(classifier.classify(document_feature(u'Á menina pegou dengue')))
-
-
+# print(classifier.classify(document_feature(u'Á menina pegou dengue')))
