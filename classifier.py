@@ -35,7 +35,3 @@ def document_feature(document, documents):
 
 def generate_dataset(documents):
     return [(document_feature(d), c) for d, c in documents]
-
-# classifier = NaiveBayesClassifier.train(generate_dataset(documents))
-
-# print(classifier.classify(document_feature(u'Á menina pegou dengue')))
