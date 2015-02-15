@@ -2,8 +2,6 @@
 import unicodedata
 import re
 
-from nltk import NaiveBayesClassifier
-
 
 def clean(document):
     nonalphanum = re.compile(r'(\W|_)+')
